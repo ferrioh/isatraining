@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <meta content="mobile_tab" name="shell-type" />
+  <title>Clientes - ISA TRAINING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&family=Outfit:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#b5055b",
+            "primary-container": "#d72d73",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#fffbff",
+            "primary-fixed": "#ffd9e1",
+            "on-primary-fixed": "#3f001b",
+            "inverse-primary": "#ffb1c5",
+            secondary: "#705862",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#f8d7e3",
+            "on-secondary-container": "#755c66",
+            tertiary: "#b10e6b",
+            "tertiary-container": "#d23284",
+            "on-tertiary": "#ffffff",
+            surface: "#fef7ff",
+            "surface-dim": "#ded7e4",
+            "surface-bright": "#fef7ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f8f1fe",
+            "surface-container": "#f3ebf8",
+            "surface-container-high": "#ede5f2",
+            "surface-container-highest": "#e7e0ed",
+            "on-surface": "#1d1a23",
+            "on-surface-variant": "#594046",
+            "inverse-surface": "#322f38",
+            "inverse-on-surface": "#f6eefb",
+            outline: "#8c7076",
+            "outline-variant": "#e0bec5",
+            "surface-tint": "#b80b5d",
+            error: "#ba1a1a",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+          },
+          borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
+          spacing: {
+            "space-lg": "1.5rem",
+            "gutter-tablet": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter-desktop": "1.5rem",
+            "margin-tablet": "2rem",
+            "space-xl": "2.5rem",
+            margin: "1.25rem",
+            gutter: "1rem",
+            "margin-desktop": "3rem",
+          },
+          fontFamily: {
+            "body-md": ["Outfit"],
+            "headline-xl-mobile": ["Epilogue"],
+            "metric-counter": ["Space Grotesk"],
+            "body-lg": ["Outfit"],
+            "label-md": ["Space Grotesk"],
+            "label-lg": ["Space Grotesk"],
+            "headline-lg-mobile": ["Epilogue"],
+            "headline-md": ["Epilogue"],
+            "headline-xl": ["Epilogue"],
+            "headline-lg": ["Epilogue"],
+            "body-sm": ["Outfit"],
+            "label-sm": ["Space Grotesk"],
+          },
+          fontSize: {
+            "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "headline-xl-mobile": ["30px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "metric-counter": ["32px", { lineHeight: "36px", letterSpacing: "-0.04em", fontWeight: "700" }],
+            "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-md": ["11px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "600" }],
+            "label-lg": ["14px", { lineHeight: "18px", letterSpacing: "0.06em", fontWeight: "600" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "500" }],
+            "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.03em", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+            "label-sm": ["10px", { lineHeight: "12px", letterSpacing: "0.1em", fontWeight: "500" }],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen">
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 px-margin flex items-center justify-between">
+      <div class="flex items-center gap-space-sm">
+        <img alt="ISA TRAINING Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VDsQ0_FN9YlkluZkvXk3d4d1p8aARZJ0NLvEeCkylEWJVexqdY-Rq6S4hzDUAi-mDZylWuj_05qKEu3uOZRBSJZGe6HozRyVtLmX8A-ygq-RniX6MFcif4cZ9akPtVbYB1jpwfxV3inmglW-Bxdu78zbMzOG9R9TS_SKecqv8egnEgV_x3O-5aCEQt8y2h6_jQmeoMBZ2030GPR56WjN1JHTAasdO-O7u_3ZV9-0NO" />
+        <div class="flex flex-col">
+          <span class="font-label-md text-label-md text-primary tracking-widest uppercase">ISA TRAINING</span>
+          <h1 class="font-headline-md text-headline-md text-on-surface font-semibold">Clientes</h1>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-xs">
+        <button class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-[22px]">notifications</span>
+        </button>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_4px_12px_rgba(181,5,91,0.25)]" onclick="location.href='../perfil_de_usuario_membres_a/code.html'" role="button" tabindex="0">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex flex-col relative w-full pt-16 pb-28 bg-surface min-h-screen">
+    <div class="flex flex-col w-full px-margin gap-space-lg pt-space-lg">
+
+      <div class="grid grid-cols-2 gap-space-sm">
+        <div class="bg-surface-container-lowest/90 backdrop-blur-xl rounded-DEFAULT p-space-md shadow-[0_6px_20px_rgba(0,0,0,0.04)] flex flex-col">
+          <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Clientes</span>
+          <span id="clientCount" class="font-metric-counter text-metric-counter text-primary">0</span>
+        </div>
+        <div class="bg-surface-container-lowest/90 backdrop-blur-xl rounded-DEFAULT p-space-md shadow-[0_6px_20px_rgba(0,0,0,0.04)] flex flex-col">
+          <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Rutinas asignadas</span>
+          <span id="routineTotal" class="font-metric-counter text-metric-counter text-tertiary">0</span>
+        </div>
+      </div>
+
+      <div class="relative">
+        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+        <input id="clientSearch" type="text" placeholder="Buscar cliente o plan..." autocomplete="off"
+          class="w-full pl-12 pr-4 py-3.5 rounded-full bg-surface-container-lowest/90 border border-outline-variant/60 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary/30" />
+      </div>
+
+      <div class="flex items-center justify-between">
+        <h2 class="font-headline-md text-headline-md font-semibold text-on-surface">Lista de clientes</h2>
+        <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Toca para ver rutinas</span>
+      </div>
+
+      <div id="clientList" class="flex flex-col gap-space-md pb-space-lg"></div>
+    </div>
+  </main>
+
+  <div id="routineModal" class="fixed inset-0 z-[60] hidden items-end sm:items-center justify-center">
+    <div class="absolute inset-0 bg-on-surface/40 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="relative w-full sm:max-w-md max-h-[88vh] flex flex-col bg-surface-container-lowest/95 backdrop-blur-2xl rounded-t-xl sm:rounded-xl shadow-[0_-12px_48px_rgba(30,27,36,0.18)]">
+      <div class="flex items-start justify-between px-space-lg pt-space-lg pb-space-md border-b border-outline-variant/40">
+        <div class="flex items-center gap-space-md">
+          <div id="modalAvatar" class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-lg">--</div>
+          <div>
+            <h2 id="modalClientName" class="font-headline-md text-headline-md font-semibold text-on-surface">Cliente</h2>
+            <p id="modalClientPlan" class="font-body-sm text-body-sm text-on-surface-variant"></p>
+          </div>
+        </div>
+        <button type="button" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" onclick="closeModal()">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="px-space-lg py-space-lg overflow-y-auto">
+        <div class="flex items-center justify-between mb-space-md">
+          <h3 class="font-label-lg text-label-lg text-on-surface font-semibold">Rutinas asignadas</h3>
+          <span id="modalRoutineCount" class="font-label-sm text-label-sm uppercase tracking-wider text-primary">0</span>
+        </div>
+        <div id="modalRoutineList" class="flex flex-col gap-space-sm"></div>
+
+        <div class="mt-space-lg pt-space-lg border-t border-outline-variant/40">
+          <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Agregar rutina</label>
+          <div class="flex gap-space-sm mt-space-sm">
+            <select id="routineSelect" class="flex-1 min-w-0 px-4 py-2.5 rounded-full bg-surface-container-low border border-outline-variant/60 font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/30"></select>
+            <button id="addRoutineBtn" type="button" class="px-space-md py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider shadow-[0_4px_14px_rgba(181,5,91,0.25)] active:scale-95 transition-transform shrink-0" onclick="addRoutine()">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="fixed bottom-0 w-full z-50 pb-safe pointer-events-none">
+    <div class="px-margin pb-space-sm pt-space-xs">
+      <div class="pointer-events-auto h-16 rounded-xl bg-surface-container-lowest/85 backdrop-blur-2xl shadow-[0_12px_32px_rgba(181,5,91,0.08)] flex items-center justify-around px-space-xs">
+        <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="descubre" href="../isa_training_inicio_descubre/code.html">
+          <span class="material-symbols-outlined text-[22px]">explore</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider">Descubre</span>
+        </a>
+        <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="rutinas-semanales" href="../rutinas_de_la_semana/code.html">
+          <span class="material-symbols-outlined text-[22px]">calendar_today</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider">Rutinas</span>
+        </a>
+        <a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 transition-all duration-200 text-primary font-semibold" data-path="clientes" href="../clientes/code.html">
+          <span class="material-symbols-outlined text-[22px]">groups</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider">Clientes</span>
+        </a>
+        <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="clientes-y-pagos" href="../control_de_clientes_pagos/code.html">
+          <span class="material-symbols-outlined text-[22px]">payments</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider">Gesti&oacute;n</span>
+        </a>
+        <a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="perfil-de-usuario" href="../perfil_de_usuario_membres_a/code.html">
+          <span class="material-symbols-outlined text-[22px]">account_circle</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider">Perfil</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const ROUTINES = [
+      { id: "r1", name: "Lower Body Sculpt", focus: "Glúteos & Isquios", duration: "45 min", kcal: 380, level: "Pro", icon: "fitness_center" },
+      { id: "r2", name: "Upper Body & Core Power", focus: "Torso & Postura", duration: "35 min", kcal: 290, level: "Intermedio", icon: "bolt" },
+      { id: "r3", name: "Mobility Reset", focus: "Movilidad", duration: "20 min", kcal: 140, level: "Todos", icon: "spa" },
+      { id: "r4", name: "HIIT Quema Total", focus: "Cardio", duration: "30 min", kcal: 320, level: "Avanzado", icon: "local_fire_department" },
+      { id: "r5", name: "Core de Acero", focus: "Abdomen", duration: "25 min", kcal: 210, level: "Intermedio", icon: "exercise" },
+    ];
+
+    let clients = [
+      { id: 1, name: "Bella García", plan: "Atelier VIP", status: "paid", routines: ["r1", "r3"] },
+      { id: 2, name: "Camila Rojas", plan: "Online VIP", status: "pending", routines: ["r2"] },
+      { id: 3, name: "Valentina Pérez", plan: "Atelier Presencial", status: "paid", routines: ["r1", "r4", "r5"] },
+      { id: 4, name: "Martina López", plan: "Online VIP", status: "overdue", routines: ["r3"] },
+      { id: 5, name: "Sofía Herrera", plan: "Atelier VIP", status: "paid", routines: ["r2", "r5"] },
+      { id: 6, name: "Isidora Fuentes", plan: "Online VIP", status: "pending", routines: ["r4"] },
+    ];
+
+    let currentClientId = null;
+    const STORAGE_KEY = "isa-clients-routines-v1";
+
+    const STATUS = {
+      paid: { label: "Al día", classes: "bg-emerald-100 text-emerald-700" },
+      pending: { label: "Pendiente", classes: "bg-primary-fixed text-on-primary-fixed" },
+      overdue: { label: "Vencido", classes: "bg-error-container text-on-error-container" },
+    };
+
+    function loadClients() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const saved = JSON.parse(raw);
+          if (Array.isArray(saved) && saved.length === clients.length) {
+            clients = saved;
+          }
+        }
+      } catch (e) { /* almacenamiento no disponible */ }
+    }
+
+    function persist() {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(clients)); } catch (e) { /* noop */ }
+    }
+
+    function routineById(id) {
+      return ROUTINES.find(function (r) { return r.id === id; });
+    }
+
+    function initials(name) {
+      return name.split(" ").filter(Boolean).map(function (p) { return p[0]; }).slice(0, 2).join("").toUpperCase();
+    }
+
+    function renderClients() {
+      const query = (document.getElementById("clientSearch").value || "").toLowerCase().trim();
+      const list = document.getElementById("clientList");
+      const filtered = clients.filter(function (c) {
+        if (!query) return true;
+        return c.name.toLowerCase().indexOf(query) !== -1 || c.plan.toLowerCase().indexOf(query) !== -1;
+      });
+
+      document.getElementById("clientCount").textContent = clients.length;
+      const total = clients.reduce(function (acc, c) { return acc + c.routines.length; }, 0);
+      document.getElementById("routineTotal").textContent = total;
+
+      if (!filtered.length) {
+        list.innerHTML =
+          '<div class="bg-surface-container-lowest/90 rounded-xl p-space-xl text-center flex flex-col items-center gap-space-sm">' +
+            '<span class="material-symbols-outlined text-[40px] text-on-surface-variant">search_off</span>' +
+            '<p class="font-body-md text-body-md text-on-surface-variant">No encontramos clientes con ese criterio.</p>' +
+          '</div>';
+        return;
+      }
+
+      list.innerHTML = filtered.map(function (c) {
+        const meta = STATUS[c.status] || STATUS.pending;
+        const routines = c.routines.length;
+        const label = routines === 1 ? "1 rutina" : routines + " rutinas";
+        return (
+          '<article class="bg-surface-container-lowest/90 backdrop-blur-xl rounded-xl p-space-lg shadow-[0_8px_24px_rgba(0,0,0,0.04)] flex flex-col">' +
+            '<div class="flex items-center gap-space-md">' +
+              '<div class="w-12 h-12 rounded-full bg-secondary-container text-primary flex items-center justify-center font-label-lg shrink-0">' + initials(c.name) + '</div>' +
+              '<div class="flex-1 min-w-0">' +
+                '<h3 class="font-headline-md text-headline-md font-semibold text-on-surface truncate">' + c.name + '</h3>' +
+                '<p class="font-body-sm text-body-sm text-on-surface-variant truncate">' + c.plan + '</p>' +
+              '</div>' +
+              '<span class="px-2.5 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider shrink-0 ' + meta.classes + '">' + meta.label + '</span>' +
+            '</div>' +
+            '<div class="flex items-center justify-between mt-space-md pt-space-md border-t border-outline-variant/40">' +
+              '<div class="flex items-center gap-1.5 text-on-surface-variant">' +
+                '<span class="material-symbols-outlined text-[18px] text-primary">fitness_center</span>' +
+                '<span class="font-label-md text-label-md uppercase tracking-wider">' + label + '</span>' +
+              '</div>' +
+              '<button type="button" class="flex items-center gap-1 px-space-md py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider shadow-[0_4px_14px_rgba(181,5,91,0.22)] active:scale-95 transition-transform" onclick="openClient(' + c.id + ')">' +
+                'Ver rutinas' +
+                '<span class="material-symbols-outlined text-[16px]">chevron_right</span>' +
+              '</button>' +
+            '</div>' +
+          '</article>'
+        );
+      }).join("");
+    }
+
+    function renderModal() {
+      const client = clients.find(function (c) { return c.id === currentClientId; });
+      if (!client) return;
+
+      document.getElementById("modalAvatar").textContent = initials(client.name);
+      document.getElementById("modalClientName").textContent = client.name;
+      document.getElementById("modalClientPlan").textContent = client.plan;
+
+      const assigned = client.routines.map(routineById).filter(Boolean);
+      document.getElementById("modalRoutineCount").textContent = assigned.length + (assigned.length === 1 ? " rutina" : " rutinas");
+
+      const list = document.getElementById("modalRoutineList");
+      if (!assigned.length) {
+        list.innerHTML =
+          '<div class="bg-surface-container-low rounded-DEFAULT p-space-lg text-center font-body-sm text-body-sm text-on-surface-variant">' +
+            'Este cliente a&uacute;n no tiene rutinas. Agrega una desde el selector de abajo.' +
+          '</div>';
+      } else {
+        list.innerHTML = assigned.map(function (r) {
+          return (
+            '<div class="flex items-center gap-space-md bg-surface-container-low rounded-DEFAULT p-space-md">' +
+              '<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0">' +
+                '<span class="material-symbols-outlined text-[20px]">' + r.icon + '</span>' +
+              '</div>' +
+              '<div class="flex-1 min-w-0">' +
+                '<p class="font-body-md text-body-md font-semibold text-on-surface truncate">' + r.name + '</p>' +
+                '<p class="font-body-sm text-body-sm text-on-surface-variant truncate">' + r.duration + ' &middot; ' + r.level + ' &middot; ' + r.kcal + ' kcal</p>' +
+              '</div>' +
+              '<button type="button" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error hover:bg-error-container/50 transition-colors shrink-0" title="Quitar rutina" onclick="removeRoutine(\'' + r.id + '\')">' +
+                '<span class="material-symbols-outlined text-[20px]">delete</span>' +
+              '</button>' +
+            '</div>'
+          );
+        }).join("");
+      }
+
+      const select = document.getElementById("routineSelect");
+      const addBtn = document.getElementById("addRoutineBtn");
+      const available = ROUTINES.filter(function (r) { return client.routines.indexOf(r.id) === -1; });
+      if (available.length) {
+        select.innerHTML = available.map(function (r) {
+          return '<option value="' + r.id + '">' + r.name + ' \u00b7 ' + r.duration + '</option>';
+        }).join("");
+        select.disabled = false;
+        addBtn.disabled = false;
+        addBtn.classList.remove("opacity-40");
+      } else {
+        select.innerHTML = '<option value="">No hay m&aacute;s rutinas disponibles</option>';
+        select.disabled = true;
+        addBtn.disabled = true;
+        addBtn.classList.add("opacity-40");
+      }
+    }
+
+    function openClient(id) {
+      currentClientId = id;
+      renderModal();
+      const modal = document.getElementById("routineModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("routineModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.style.overflow = "";
+      currentClientId = null;
+    }
+
+    function addRoutine() {
+      const client = clients.find(function (c) { return c.id === currentClientId; });
+      const select = document.getElementById("routineSelect");
+      if (!client || !select.value) return;
+      if (client.routines.indexOf(select.value) === -1) {
+        client.routines.push(select.value);
+        persist();
+      }
+      renderModal();
+      renderClients();
+    }
+
+    function removeRoutine(routineId) {
+      const client = clients.find(function (c) { return c.id === currentClientId; });
+      if (!client) return;
+      client.routines = client.routines.filter(function (id) { return id !== routineId; });
+      persist();
+      renderModal();
+      renderClients();
+    }
+
+    document.getElementById("clientSearch").addEventListener("input", renderClients);
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeModal();
+    });
+
+    loadClients();
+    renderClients();
+  </script>
+</body>
+</html>

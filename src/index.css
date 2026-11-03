@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Epilogue", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #b5055b;
+  --color-primary-container: #d72d73;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #fffbff;
+  --color-primary-fixed: #ffd9e1;
+  --color-on-primary-fixed: #3f001b;
+  --color-secondary: #705862;
+  --color-secondary-container: #f8d7e3;
+  --color-on-secondary-container: #755c66;
+  --color-tertiary: #b10e6b;
+  --color-tertiary-container: #d23284;
+  --color-on-tertiary: #ffffff;
+  --color-surface: #fef7ff;
+  --color-surface-low: #f8f1fe;
+  --color-surface-container: #f3ebf8;
+  --color-surface-high: #ede5f2;
+  --color-surface-highest: #e7e0ed;
+  --color-on-surface: #1d1a23;
+  --color-on-surface-variant: #594046;
+  --color-outline: #8c7076;
+  --color-outline-variant: #e0bec5;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-success: #059669;
+  --color-success-container: #d1fae5;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(48rem 32rem at 12% -8%, rgba(248, 215, 227, 0.7), transparent 60%),
+      radial-gradient(40rem 28rem at 108% 6%, rgba(224, 53, 122, 0.14), transparent 55%),
+      var(--color-surface);
+    color: var(--color-on-surface);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior: none;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
