@@ -7,7 +7,6 @@ export interface Routine {
   name: string;
   focus: string;
   duration: string;
-  kcal: number;
   level: string;
   icon: string;
 }
@@ -29,3 +28,4 @@ export interface RealtimeMessage {
   clients?: Client[];
   online?: number;
 }
+

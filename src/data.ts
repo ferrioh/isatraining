@@ -6,7 +6,6 @@ export const ROUTINES: Routine[] = [
     name: "Lower Body Sculpt",
     focus: "Glúteos & Isquios",
     duration: "45 min",
-    kcal: 380,
     level: "Pro",
     icon: "fitness_center",
   },
@@ -15,7 +14,6 @@ export const ROUTINES: Routine[] = [
     name: "Upper Body & Core Power",
     focus: "Torso & Postura",
     duration: "35 min",
-    kcal: 290,
     level: "Intermedio",
     icon: "bolt",
   },
@@ -24,7 +22,6 @@ export const ROUTINES: Routine[] = [
     name: "Mobility Reset",
     focus: "Movilidad",
     duration: "20 min",
-    kcal: 140,
     level: "Todos",
     icon: "spa",
   },
@@ -33,7 +30,6 @@ export const ROUTINES: Routine[] = [
     name: "HIIT Quema Total",
     focus: "Cardio",
     duration: "30 min",
-    kcal: 320,
     level: "Avanzado",
     icon: "local_fire_department",
   },
@@ -42,24 +38,23 @@ export const ROUTINES: Routine[] = [
     name: "Core de Acero",
     focus: "Abdomen",
     duration: "25 min",
-    kcal: 210,
     level: "Intermedio",
     icon: "exercise",
   },
 ];
 
 export const SEED_CLIENTS: Client[] = [
-  { id: 1, name: "Bella García", plan: "Atelier VIP", status: "paid", routines: ["r1", "r3"] },
+  { id: 1, name: "Bella García", plan: "Online Personalizado", status: "paid", routines: ["r1", "r3"] },
   { id: 2, name: "Camila Rojas", plan: "Online VIP", status: "pending", routines: ["r2"] },
   {
     id: 3,
     name: "Valentina Pérez",
-    plan: "Atelier Presencial",
+    plan: "Online Personalizado",
     status: "paid",
     routines: ["r1", "r4", "r5"],
   },
   { id: 4, name: "Martina López", plan: "Online VIP", status: "overdue", routines: ["r3"] },
-  { id: 5, name: "Sofía Herrera", plan: "Atelier VIP", status: "paid", routines: ["r2", "r5"] },
+  { id: 5, name: "Sofía Herrera", plan: "Online Personalizado", status: "paid", routines: ["r2", "r5"] },
   { id: 6, name: "Isidora Fuentes", plan: "Online VIP", status: "pending", routines: ["r4"] },
 ];
 
@@ -172,3 +167,4 @@ export function initials(name: string): string {
     .join("")
     .toUpperCase();
 }
+

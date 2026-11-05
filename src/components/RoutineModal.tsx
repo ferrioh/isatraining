@@ -106,7 +106,7 @@ export default function RoutineModal({ client, onClose }: RoutineModalProps) {
                       {routine.name}
                     </p>
                     <p className="font-body text-xs text-on-surface-variant truncate">
-                      {routine.duration} · {routine.level} · {routine.kcal} kcal
+                      {routine.duration} · {routine.level}
                     </p>
                   </div>
                   <button
@@ -163,3 +163,4 @@ export default function RoutineModal({ client, onClose }: RoutineModalProps) {
     </div>
   );
 }
+
