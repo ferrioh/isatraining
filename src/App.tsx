@@ -1,6 +1,7 @@
 import type { RouteObject } from "react-router-dom";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
+import Preloader from "./components/Preloader";
 import { ClientsProvider } from "./context/ClientsContext";
 import Clients from "./pages/Clients";
 import Discover from "./pages/Discover";
@@ -18,19 +19,22 @@ const routes: RouteObject[] = [
 
 export default function App() {
   return (
-    <ClientsProvider>
-      <Routes>
-        <Route element={<Layout />}>
-          {routes.map((route) =>
-            route.index ? (
-              <Route key="index" index element={route.element} />
-            ) : (
-              <Route key={route.path} path={route.path} element={route.element} />
-            ),
-          )}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Route>
-      </Routes>
-    </ClientsProvider>
+    <>
+      <Preloader />
+      <ClientsProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            {routes.map((route) =>
+              route.index ? (
+                <Route key="index" index element={route.element} />
+              ) : (
+                <Route key={route.path} path={route.path} element={route.element} />
+              ),
+            )}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Route>
+        </Routes>
+      </ClientsProvider>
+    </>
   );
 }
