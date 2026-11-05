@@ -103,16 +103,6 @@ export default function Discover() {
       <div className="experience-copy experience-copy--centered">
         <Reveal><span className="eyebrow">QUE ENTRENAR SEA LO FÁCIL</span></Reveal>
         <Heading text="Abre tu rutina. Dale play." accent="Ve por ti." />
-        <Reveal>
-          <p>Consulta el ejercicio, entiende la técnica y sigue tus series. Todo organizado para que tu energía esté donde tiene que estar: en ti.</p>
-          <ul className="experience-points">
-            <li><span className="material-symbols-outlined" aria-hidden="true">play_circle</span>Videos cortos. Movimientos claros.</li>
-            <li><span className="material-symbols-outlined" aria-hidden="true">fitness_center</span>Rutinas según tu nivel y objetivo.</li>
-            <li><span className="material-symbols-outlined" aria-hidden="true">trending_up</span>Tu peso y tu constancia, paso a paso.</li>
-          </ul>
-          <Link className="outline-cta" to="/rutinas">Explorar las rutinas <Arrow /></Link>
-          <small className="muted">Vista de ejemplo. Tu plan se asigna después de hablar con Isa.</small>
-        </Reveal>
       </div>
 
       <Reveal className="experience-gallery">
