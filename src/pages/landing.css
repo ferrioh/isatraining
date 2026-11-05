@@ -120,9 +120,16 @@
 .faq summary>span { font-size: 21px; color: #b0507a; transition: transform .3s; }
 .faq details[open] summary>span { transform: rotate(45deg); }
 .faq details p { color: var(--muted); font-size: 13px; line-height: 1.8; margin-top: 14px; }
-.landing-footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line); padding-block: 30px; }
+.landing-footer { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 28px; margin-top: 56px; margin-bottom: 26px; padding: 36px 40px; border: 1px solid rgba(181,5,91,.18); border-top: 3px solid var(--pink); border-radius: 24px; background: linear-gradient(135deg, #fbe6ef 0%, #fff4f9 55%, #fcecf4 100%); box-shadow: 0 -12px 34px rgba(181,5,91,.07); }
 .landing-footer .brand { font-size: 36px; }
-.landing-footer p,.landing-footer small { font-size: 11px; color: #816975; }
+.footer-brand { display: flex; flex-direction: column; gap: 10px; }
+.footer-brand small { font-size: 11px; color: #816975; }
+.footer-social { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.footer-social p { margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 2.4px; text-transform: uppercase; color: var(--pink); }
+.social-links { display: flex; gap: 10px; }
+.social-links a { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: var(--pink); background: #fff; border: 1px solid rgba(181,5,91,.24); box-shadow: 0 6px 16px rgba(181,5,91,.08); transition: background .25s ease, color .25s ease, transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.social-links a:hover,.social-links a:focus-visible { background: var(--pink); color: #fff; border-color: var(--pink); transform: translateY(-3px); box-shadow: 0 10px 22px rgba(181,5,91,.28); }
+.social-links svg { width: 20px; height: 20px; display: block; }
 @media (max-width: 1360px) and (min-width: 801px) { .photo-hero { margin-inline: 24px; } }
 @media (max-width: 1000px) {
   .landing-nav,.landing-section,.landing-footer,.editorial-line { padding-inline: 28px; }
@@ -211,9 +218,10 @@
   .faq { grid-template-columns: 1fr; gap: 20px; padding-bottom: 50px; }
   .faq details { padding-block: 20px; }
   .faq summary { font-size: 13px; }
-  .landing-footer { flex-wrap: wrap; padding-block: 27px; gap: 20px; }
-  .landing-footer p { font-size: 10px; }
-  .landing-footer small { width: 100%; font-size: 10px; }
+  .landing-footer { flex-direction: column; align-items: flex-start; padding: 28px 24px; gap: 22px; }
+  .footer-social { align-items: flex-start; }
+  .footer-social p { font-size: 10px; }
+  .footer-brand small { font-size: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
