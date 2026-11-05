@@ -5,12 +5,21 @@ import AnimatedContent from '../components/reactbits/AnimatedContent';
 import BlurText from '../components/reactbits/BlurText';
 import SpotlightCard from '../components/reactbits/SpotlightCard';
 import StarBorder from '../components/reactbits/StarBorder';
+import PhotoCarousel from '../components/PhotoCarousel';
 import './landing.css';
 
 const slides = [
   { image: '/images/isa-portrait.jpg', label: 'Tu fuerza empieza contigo.', position: 'center 25%' },
   { image: '/images/isa-cream.jpg', label: 'Haz espacio para ti.', position: 'center 24%' },
-  { image: '/images/isa-navy.jpg', label: 'A tu ritmo. Con intención.', position: 'center 27%' },
+  { image: '/images/isa-navy.jpg', label: 'A tu ritmo. Con intenciA3n.', position: 'center 27%' },
+];
+const galleryImages = [
+  { src: '/images/isa-portrait.jpg', alt: 'Isa en su entrenamiento' },
+  { src: '/images/isa-strength.jpg', alt: 'Ejercicio de fuerza guiado por Isa' },
+  { src: '/images/isa-training.jpg', alt: 'Técnica de entrenamiento' },
+  { src: '/images/isa-cream.jpg', alt: 'Isa en el atelier' },
+  { src: '/images/isa-mobility.jpg', alt: 'Rutina de movilidad' },
+  { src: '/images/isa-navy.jpg', alt: 'Sesión de entrenamiento' },
 ];
 const benefits = [
   { image: '/images/isa-strength.jpg', icon: 'fitness_center', tag: 'UN PLAN PARA TI', title: 'Tu rutina. Tu ritmo.', copy: 'Entrena con un plan que encaje en tu vida y evolucione contigo.', link: '#empezar', cta: 'Encontrar mi plan' },
@@ -67,7 +76,7 @@ export default function Discover() {
           <motion.img key={slides[slide].image} className="hero-image" src={slides[slide].image} alt={`Isa, tu entrenadora online. Foto ${slide + 1} de ${slides.length}`} style={{ objectPosition: slides[slide].position }} initial={{ opacity: 0, scale: reduced ? 1 : 1.035 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : 0.75, ease: [0.22, 1, 0.36, 1] }} fetchPriority={slide === 0 ? 'high' : 'auto'} />
         </AnimatePresence>
         <div className="hero-fade" aria-hidden="true" />
-        <div className="hero-photo-top"><span className="glass-pill"><span className="status-dot" />100% ONLINE</span><span className="photo-index">ISA / {String(slide + 1).padStart(2, '0')}</span></div>
+        <div className="hero-photo-top"><span className="glass-pill"><span className="status-dot" />100% ONLINE</span></div>
         <span className="hero-caption" aria-live="polite">{slides[slide].label}</span>
         <div className="hero-slider-controls"><div className="slide-dots" role="group" aria-label="Elegir foto">{slides.map((item, i) => <button key={item.image} aria-label={`Ver foto ${i + 1}`} aria-pressed={slide === i} onClick={() => setSlide(i)}><span /></button>)}</div><div className="slide-arrows"><button aria-label="Foto anterior" onClick={() => setSlide((slide + slides.length - 1) % slides.length)}><span aria-hidden="true">←</span></button><button aria-label="Foto siguiente" onClick={() => setSlide((slide + 1) % slides.length)}><span aria-hidden="true">→</span></button></div></div>
       </div>
@@ -87,12 +96,42 @@ export default function Discover() {
 
     <section className="landing-section method-section" id="metodo">
       <div className="section-heading"><div><Reveal><span className="eyebrow">SIMPLE. PERSONAL. CONTIGO.</span></Reveal><Heading text="Todo para avanzar." accent="Nada que te distraiga." /></div><Reveal><p>Menos dudas sobre qué hacer.<br />Más ganas de volver a entrenar.</p></Reveal></div>
-      <div className="photo-benefits">{benefits.map((benefit, i) => <Reveal key={benefit.title} delay={i * 0.09}><SpotlightCard className={`photo-benefit photo-benefit-${i + 1}`} theme="light" spotlightColor="#e888b4" intensity={0.25} borderGlow={0.8} proximity={60}><img src={benefit.image} alt={i === 2 ? 'Isa durante un ejercicio de movilidad' : 'Isa en su sesión de entrenamiento'} loading="lazy" /><div className="benefit-fade" aria-hidden="true" /><div className="benefit-top"><span className="glass-pill">{benefit.tag}</span><span className="benefit-icon material-symbols-outlined" aria-hidden="true">{benefit.icon}</span></div><div className="benefit-bottom"><h3>{benefit.title}</h3><p>{benefit.copy}</p><a href={benefit.link} className="benefit-link">{benefit.cta}<span><Arrow /></span></a></div></SpotlightCard></Reveal>)}</div>
+      <div className="photo-benefits">{benefits.map((benefit, i) => <Reveal key={benefit.title} delay={i * 0.09}><SpotlightCard className={`photo-benefit photo-benefit-${i + 1}`} theme="light" spotlightColor="#e888b4" intensity={0.25} borderGlow={0.8} proximity={60}><img src={benefit.image} alt={i === 2 ? 'Isa durante un ejercicio de movilidad' : 'Isa en su sesión de entrenamiento'} loading="lazy" /><div className="benefit-fade" aria-hidden="true" /><div className="benefit-top"><span className="glass-pill">{benefit.tag}</span></div><div className="benefit-bottom"><h3>{benefit.title}</h3><p>{benefit.copy}</p><a href={benefit.link} className="benefit-link">{benefit.cta}<span><Arrow /></span></a></div></SpotlightCard></Reveal>)}</div>
     </section>
 
-    <section className="landing-section experience-section" id="experiencia">
-      <Reveal className="experience-visual"><div className="experience-frame"><img src="/images/isa-strength.jpg" alt="Isa realizando un ejercicio de fuerza" loading="lazy" /><span className="glass-pill">TU RUTINA, SIEMPRE A MANO</span><div className="experience-player"><span className="eyebrow">MOVIMIENTO A MOVIMIENTO</span><h3>Entrena con dirección.</h3><div className="player-preview-row"><span>Rutinas · Series · Técnica</span><Link to="/rutinas" aria-label="Explorar la vista de rutinas"><span className="material-symbols-outlined" aria-hidden="true">play_arrow</span></Link></div></div></div><span className="visual-footnote">TU ESPACIO. TU RITMO. TU PROCESO.</span></Reveal>
-      <div className="experience-copy"><Reveal><span className="eyebrow">QUE ENTRENAR SEA LO FÁCIL</span></Reveal><Heading text="Abre tu rutina. Dale play." accent="Ve por ti." /><Reveal><p>Consulta el ejercicio, entiende la técnica y sigue tus series. Todo organizado para que tu energía esté donde tiene que estar: en ti.</p><ul className="experience-points"><li><span className="material-symbols-outlined" aria-hidden="true">play_circle</span>Videos cortos. Movimientos claros.</li><li><span className="material-symbols-outlined" aria-hidden="true">fitness_center</span>Rutinas según tu nivel y objetivo.</li><li><span className="material-symbols-outlined" aria-hidden="true">trending_up</span>Tu peso y tu constancia, paso a paso.</li></ul><Link className="outline-cta" to="/rutinas">Explorar las rutinas <Arrow /></Link><small className="muted">Vista de ejemplo. Tu plan se asigna después de hablar con Isa.</small></Reveal></div>
+    <section className="landing-section experience-section experience-section--stacked" id="experiencia">
+      <div className="experience-copy experience-copy--centered">
+        <Reveal><span className="eyebrow">QUE ENTRENAR SEA LO FÁCIL</span></Reveal>
+        <Heading text="Abre tu rutina. Dale play." accent="Ve por ti." />
+        <Reveal>
+          <p>Consulta el ejercicio, entiende la técnica y sigue tus series. Todo organizado para que tu energía esté donde tiene que estar: en ti.</p>
+          <ul className="experience-points">
+            <li><span className="material-symbols-outlined" aria-hidden="true">play_circle</span>Videos cortos. Movimientos claros.</li>
+            <li><span className="material-symbols-outlined" aria-hidden="true">fitness_center</span>Rutinas según tu nivel y objetivo.</li>
+            <li><span className="material-symbols-outlined" aria-hidden="true">trending_up</span>Tu peso y tu constancia, paso a paso.</li>
+          </ul>
+          <Link className="outline-cta" to="/rutinas">Explorar las rutinas <Arrow /></Link>
+          <small className="muted">Vista de ejemplo. Tu plan se asigna después de hablar con Isa.</small>
+        </Reveal>
+      </div>
+
+      <Reveal className="experience-gallery">
+        <div className="gallery-top">
+          <span className="glass-pill">TU RUTINA, SIEMPRE A MANO</span>
+          <span className="eyebrow">MOVIMIENTO A MOVIMIENTO</span>
+        </div>
+        <PhotoCarousel images={galleryImages} />
+        <div className="gallery-bottom">
+          <div className="gallery-copy">
+            <h3>Entrena con dirección.</h3>
+            <p>Rutinas · Series · Técnica</p>
+          </div>
+          <Link to="/rutinas" className="gallery-play" aria-label="Explorar la vista de rutinas">
+            <span className="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+          </Link>
+          <span className="visual-footnote">TU ESPACIO. TU RITMO. TU PROCESO.</span>
+        </div>
+      </Reveal>
     </section>
 
     <section className="landing-section start-section" id="empezar">
