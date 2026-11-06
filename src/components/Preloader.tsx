@@ -46,13 +46,6 @@ export default function Preloader() {
       aria-hidden="true"
     >
       <div className="preloader-stage">
-        <div className="preloader-halo" />
-        <div className="preloader-ring">
-          <svg viewBox="0 0 120 120" aria-hidden="true">
-            <circle className="preloader-ring-track" cx="60" cy="60" r="54" />
-            <circle className="preloader-ring-arc" cx="60" cy="60" r="54" />
-          </svg>
-        </div>
         <img className="preloader-logo" src="/icons/isa-wordmark.png" alt="" />
       </div>
     </div>

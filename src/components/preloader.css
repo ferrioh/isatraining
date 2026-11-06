@@ -23,63 +23,18 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: min(58vw, 220px);
-  height: min(58vw, 220px);
+  width: min(70vw, 260px);
+  height: min(70vw, 260px);
   transform-origin: 50% 50%;
-}
-
-.preloader-halo {
-  position: absolute;
-  inset: 8%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(181, 5, 91, 0.18), rgba(181, 5, 91, 0) 68%);
-  filter: blur(6px);
-  animation: preloader-halo-pulse 1.6s ease-in-out infinite;
-}
-
-.preloader-ring {
-  position: absolute;
-  inset: 0;
-  transform-origin: 50% 50%;
-}
-
-.preloader-ring svg {
-  width: 100%;
-  height: 100%;
-  transform-origin: 50% 50%;
-  animation: preloader-spin 1.15s linear infinite;
-}
-
-.preloader-ring-track {
-  fill: none;
-  stroke: rgba(181, 5, 91, 0.16);
-  stroke-width: 3;
-}
-
-.preloader-ring-arc {
-  fill: none;
-  stroke: #b5055b;
-  stroke-width: 3.4;
-  stroke-linecap: round;
-  stroke-dasharray: 78 262;
-  filter: drop-shadow(0 0 6px rgba(181, 5, 91, 0.35));
 }
 
 .preloader-logo {
   position: relative;
-  width: min(46%, 106px);
+  width: min(86%, 220px);
   height: auto;
   transform-origin: 50% 50%;
   animation: preloader-logo-in 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   filter: drop-shadow(0 12px 28px rgba(181, 5, 91, 0.22));
-}
-
-.preloader--leaving .preloader-halo {
-  animation: preloader-halo-out 0.85s cubic-bezier(0.7, 0, 0.3, 1) forwards;
-}
-
-.preloader--leaving .preloader-ring {
-  animation: preloader-ring-out 0.85s cubic-bezier(0.7, 0, 0.3, 1) forwards;
 }
 
 .preloader--leaving .preloader-logo {
@@ -104,38 +59,6 @@
   }
 }
 
-@keyframes preloader-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes preloader-halo-pulse {
-  0%,
-  100% {
-    opacity: 0.55;
-    transform: scale(0.95);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.06);
-  }
-}
-
-@keyframes preloader-ring-out {
-  0% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.24) rotate(170deg);
-    opacity: 0;
-  }
-}
-
 @keyframes preloader-logo-out {
   0% {
     transform: scale(1) rotate(0deg);
@@ -147,23 +70,8 @@
   }
 }
 
-@keyframes preloader-halo-out {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(0.2) rotate(120deg);
-    opacity: 0;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .preloader-halo,
-  .preloader-ring svg,
   .preloader-logo,
-  .preloader--leaving .preloader-halo,
-  .preloader--leaving .preloader-ring,
   .preloader--leaving .preloader-logo {
     animation: none;
   }
